@@ -18,6 +18,7 @@ class SingersController < ApplicationController
   def edit
     singer = Singer.find(params[:id])
     if singer.destroy
+      redirect_back(fallback_location: root_path)
     else
       error = { detail: "Artist with id #{params[:id]} cannot be deleted" }
     end
