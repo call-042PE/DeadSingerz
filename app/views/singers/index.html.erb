@@ -1,12 +1,15 @@
-<h1>Dead Singers Available</h1>
-<div class="singer-grid">
+<h1 class="text-center">Dead Singers Available</h1>
+
+<div class="container">
   <% @singers.each do |singer| %>
-    <div class="singer-card">
+    <div class="card" style="width: 18rem;">
       <img class="card-img-top" src="..." alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title"><%= singer.name %></h5>
-        <p class="card-text"><%= singer.bio %></p>
-        <a href="#" class= "btn btn-primary">Go somewhere</a>
+        <p class="card-text"><%= singer.bio %></p>>
+        <div class="align-self-end">
+          <a href="#" class="btn btn-primary mt-auto">Go somewhere</a>
+        </div>
       </div>
     </div>
   <% end %>
