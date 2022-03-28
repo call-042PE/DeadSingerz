@@ -1,0 +1,13 @@
+<h1>Dead Singers Available</h1>
+<div class="singer-grid">
+  <% @singers.each do |singer| %>
+    <div class="singer-card">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%= singer.name %></h5>
+        <p class="card-text"><%= singer.bio %></p>
+        <a href="#" class= "btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  <% end %>
+</div>
