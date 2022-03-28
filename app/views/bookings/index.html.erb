@@ -1,0 +1,5 @@
+<h2>My bookings</h2>
+  <% @bookings.each do |booking| %>
+  <p> <%= booking.singer %>,
+    <%= date(booking.star_date) %></p>
+  <% end %>
