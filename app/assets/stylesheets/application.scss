@@ -10,4 +10,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "pages/navbar"
+@import "pages/navbar";
+@import "pages/footer";
+
+body {
+  height: 100vh;
+  color: #d70466;
+  background-color: #000000;
+  font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  }
