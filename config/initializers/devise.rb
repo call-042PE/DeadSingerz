@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  
+
   # config.secret_key = '3f83f23d68213de57c4a2ee518c1a3dc6970c14a7d6b683efaf5c62bcf3750e06b6a55763dcaf6ccbd35cce1500f7cad9f5af5ec79d77fe0d9f576414cb3edad'
 
   # ==> Controller configuration
@@ -245,7 +245,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = false
+  config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
