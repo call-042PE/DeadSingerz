@@ -1,0 +1,12 @@
+.navbar-lewagon .navbar-brand img {
+  width: 90px;
+  margin-top: 10px;
+}
+
+.navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
