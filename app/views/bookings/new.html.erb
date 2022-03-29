@@ -1,0 +1,12 @@
+<h2>Booking <%= @singer.name %></h2>
+<h3><%= @singer.bio %></h3>
+<h3>Price <%= @singer.price %>€</h3>
+<%= simple_form_for [@singer, @booking] do |b| %>
+
+<%= b.input :user_id, input_html: { value: current_user.id }, as: :hidden %>
+<%= b.input :singer_id, input_html: { value: @singer.id} , as: :hidden %>
+<%= b.input :date, as: :date, html5: true %>
+
+<%= b.button :submit %>
+
+<%end%>

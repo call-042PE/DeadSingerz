@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  belongs_to :singer_id
-  belongs_to :user_id
+  belongs_to :singer
+  belongs_to :user
   validates :date, presence: true
 end
