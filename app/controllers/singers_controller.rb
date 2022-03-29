@@ -27,6 +27,6 @@ class SingersController < ApplicationController
   private
 
   def singer_params
-    params.require(:singer).permit(:name, :image_url)
+    params.require(:singer).permit(:name, :image_url, :photo)
   end
 end
