@@ -1,14 +1,15 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :load_booking, except:[:index, :new, :create]
-  load_and_authorize_resource
+  before_action :load_booking, except:[ :index, :new, :create ]
+
   def index
-    @bookings = current_user.bookings
-    @users = User.all
+    @bookings = Booking.where(user_id: current_user.id)
   end
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.booked = false
+    @booking.save
   end
 
   def show
@@ -17,6 +18,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @singer = Singer.find(params[:singer_id])
   end
 
   def edit
@@ -25,8 +27,9 @@ class BookingsController < ApplicationController
   end
 
   private
+
   def booking_params
-    params.require(:booking).permit(:user_id)
+    params.require(:booking).permit(:user_id, :singer_id, :date)
   end
 
   def load_booking
