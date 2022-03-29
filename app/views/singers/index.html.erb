@@ -1,16 +1,12 @@
-<h1 class="text-center">Dead Singers Available</h1>
 
-<div class="container">
-  <% @singers.each do |singer| %>
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title"><%= singer.name %></h5>
-        <p class="card-text"><%= singer.bio %></p>>
-        <div class="align-self-end">
-          <a href="#" class="btn btn-primary mt-auto">Go somewhere</a>
-        </div>
-      </div>
+
+<<div class=“card text-center” style=“width: 18rem;“>
+    <img class=“card-img-top” src=“482px-Kurt_Cobain_1991_cropped.png” alt=“Card image cap”>
+    <div class=“card-body”>
+      <% singers.each do |singer| %>
+        <h5 class=“card-title”><%= singer.name %></h5>
+        <p class=“card-text”><%= singer.price %></p>
+        <a href=“#” class=“btn btn-primary text-center”>See Booking details</a>
+      <% end %>
     </div>
-  <% end %>
-</div>
+  </div>
