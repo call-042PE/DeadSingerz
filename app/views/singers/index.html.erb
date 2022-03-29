@@ -1,9 +1,9 @@
 
 <div class="container">
     <% @singers.each do |singer| %>
-        <div class="card text-center" style="width: 18rem;">
+        <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://yard.media/wp-content/uploads/2021/01/2pac-chi-modu-interview.jpg');">
           <div class="column">
-              <img class="card-img-top" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fgenerasonrapfr.com%2Fune-radio-totalement-dediee-a-2pac-a-ete-creee-video%2F&psig=AOvVaw3b1IL7GZ78-gIGtSGzaDwL&ust=1648635033805000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPjyoKKK6_YCFQAAAAAdAAAAABAJ" alt="Card image cap">
+              <%# <img class="card-img-top" src="https://yard.media/wp-content/uploads/2021/01/2pac-chi-modu-interview.jpg" alt="2pac"> %>
               <div class="card-body">
                   <h5 class="card-title"><%= singer.name %></h5>
                   <p class="card-text"></p>
