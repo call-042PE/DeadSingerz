@@ -1,2 +1,20 @@
 // Import page-specific CSS files here.
-@import "home";
+.container{
+  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 25%);
+  grid-gap: 12px;
+  justify-content: space-around;
+}
+
+.card{
+  width: 200px;
+  height: 200px;
+  margin-top: 12px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 4px;
+}
+
+.card-body{
+  display: flexbox
+}

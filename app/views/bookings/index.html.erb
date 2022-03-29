@@ -1,5 +1,15 @@
-<h2>My bookings</h2>
-  <% @bookings.each do |booking| %>
-  <p> <%= booking.singer %>,
-    <%= date(booking.start_date) %></p>
+<h2>My Booking</h2>
+<% @bookings.each do |booking| %>
+  <% if booking.booked == true %>
+    <p> <%= booking.singer.name %>,
+    <%= booking.date %></p>
   <% end %>
+<% end %>
+
+<h2>Waiting bookings</h2>
+<% @bookings.each do |booking| %>
+  <% if booking.booked == false %>
+    <p> <%= booking.singer.name %>,
+    <%= booking.date %></p>
+  <% end %>
+<% end %>
