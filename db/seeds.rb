@@ -27,7 +27,7 @@ Singer.create!(name: "Johnny Hallyday", category: "rock", price: 500, bio: "Fren
 Singer.create!(name: "Daniel Balavoine", category: "pop", price: 500, bio: " French singer and songwriter. He was hugely popular in the French-speaking world, and inspired many singers in the 1980s.", death_year: 1986, birth_year: 1952, user: user_3)
 Singer.create!(name: "Elvis Presley", category: "rock", price: 500, bio: "American singer and actor. Dubbed the 'King of Rock and Roll', he is regarded as one of the most significant cultural icons of the 20th century.", death_year: 1977, birth_year: 1935, user: user_4)
 Singer.create!(name: "Henri Salvador", category: "pop", price: 500, bio: "French Caribbean comedian, singer and cabaret artist.", death_year: 2008, birth_year: 1917, user: user_4)
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 img_category_1 = URI.open(https://res.cloudinary.com/ddkm6bg5l/image/upload/v1648550694/DeadSingerz/TupacShakur_dana-lixenberg_uhyuxo.jpg)
 img_category_2 = URI.open(https://res.cloudinary.com/ddkm6bg5l/image/upload/v1648550735/DeadSingerz/jim-morrison-du-groupe-de-rock-the-doors_ag1uaa.jpg)
 img_category_3 = URI.open(https://res.cloudinary.com/ddkm6bg5l/image/upload/v1648550807/DeadSingerz/jimmy_Hendrix_j2iolp.jpg)
@@ -40,7 +40,7 @@ img_category_9 = URI.open(https://res.cloudinary.com/ddkm6bg5l/image/upload/v164
 img_category_10 = URI.open(https://res.cloudinary.com/ddkm6bg5l/image/upload/v1648551265/DeadSingerz/daniel-balavoine_qpcsqj.jpg)
 img_category_11 = URI.open(https://res.cloudinary.com/ddkm6bg5l/image/upload/v1648551303/DeadSingerz/elvis_iwvd1s.jpg)
 img_category_12 = URI.open(https://res.cloudinary.com/ddkm6bg5l/image/upload/v1648551358/DeadSingerz/henri-salvador_n5aycf.jpg)
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 category_1 = Singer.create!(name: "2Pac", description: "Considered one of the most influential rappers of all time, from new york east coast")
 category_1.photo.attach(io: img_category_1, filename: '2Pac.png', content_type: 'image/png')
@@ -58,7 +58,7 @@ category_5 = Singer.create!(name: 'Kurt Cobain', description: "American singer, 
 category_5.photo.attach(io: img_category_5, filename: 'Kurt_Cobain.png', content_type: 'img/png')
 
 category_6 = Singer.create!(name: 'Lil Peep', description: "Swedish-American rapper, singer, and songwriter. He was a member of the emo rap collective GothBoiClique.")
-category_6.photo.attach(io: img_category_6, filename: 'Lil_Peep.png', content_type: 'img/png')
+category_6.photo.attach(io: img_category_6, filename: 'Lil_Peep.png', content_type: 'img/jpg')
 
 category_7 = Singer.create!(name: 'Serge Gainsbourg', description: "French musician, singer-songwriter, actor, author and filmmaker. Regarded as one of the most important figures in French pop.")
 category_7.photo.attach(io: img_category_7, filename: 'Serge_Gainsbourg.png', content_type: 'img/png')
