@@ -13,6 +13,7 @@
   margin-top: 12px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 8px;
+  border: none;
 }
 
 .card-body{
@@ -36,4 +37,6 @@
 
 .btn{
   border-radius: 8px;
+  opacity: 0.88;
+  filter: alpha(opacity=90);
 }
