@@ -1,14 +1,14 @@
 
 <div class="container">
     <% @singers.each do |singer| %>
-        <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://yard.media/wp-content/uploads/2021/01/2pac-chi-modu-interview.jpg');">
+        <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<%= cl_image_path singer.photo.key%>')">
           <div class="column">
               <%# <img class="card-img-top" src="https://yard.media/wp-content/uploads/2021/01/2pac-chi-modu-interview.jpg" alt="2pac"> %>
               <div class="card-body">
                   <h5 class="card-title"><%= singer.name %></h5>
                   <p class="card-text"></p>
                   <div class="button-container">
-                    <a href="#" class="btn btn-primary align-text-bottom">Book me!</a>
+                    <%= link_to "Book me!", "singers/#{singer.id}", class: "btn btn-primary align-text-bottom" %>
                   </div>
               </div>
               </div>
