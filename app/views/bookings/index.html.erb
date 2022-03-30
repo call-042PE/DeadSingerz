@@ -8,7 +8,7 @@
 
 <h2>Waiting bookings</h2>
 <% @bookings.each do |booking| %>
-  <% if booking.booked == false %>
+  <% if booking.booked == false && booking.singer.user_id == current_user.id%>
     <p> <%= booking.singer.name %>,
     <%= booking.date %></p>
   <% end %>
