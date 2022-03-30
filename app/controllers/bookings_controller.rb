@@ -7,9 +7,30 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking.booked = false
-    @booking.save
+    already_booked = false
+    @bookings_booked = Booking.where(date: params[:booking][:date])
+    if !@bookings_booked.empty? # if the array is not empty it means that someone booked some artist on the same day
+      @bookings_booked.each do |booking|
+        @booking = Booking.new(booking_params)
+        already_booked = true if @booking.singer.name == booking.singer.name # we check if the artist of the current booking is the artist the user booked on
+      end
+      unless already_booked
+        @booking.booked = false
+        if @booking.save
+          redirect_to "/dashboard"
+        else
+          redirect_to "/singers/"
+        end
+      end
+    else
+      @booking = Booking.new(booking_params)
+      @booking.booked = false
+      if @booking.save
+        redirect_to "/dashboard"
+      else
+        redirect_to "/singers/"
+      end
+    end
   end
 
   def show
