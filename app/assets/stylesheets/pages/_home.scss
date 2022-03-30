@@ -8,3 +8,58 @@ body {
 background: radial-gradient(circle, rgba(255,240,247,1) 0%, rgba(236,245,255,1) 100%);
 
   }
+
+
+  .banner {
+    background-size: cover;
+    background-position: center;
+    padding: 150px 0;
+  }
+
+  .banner h1 {
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 52px;
+    font-weight: bold;
+    margin-left: 89px;
+  }
+
+  .banner p {
+    font-size: 30px;
+    color: white;
+    opacity: .8;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    margin-left: 94px;
+  }
+
+  .banner-container{
+    display: block;}
+
+
+.our-deadsingerz{
+  display: flexbox;
+  justify-content: center;
+}
+
+.my-container-home{
+  width: 50%;
+  margin: 0 auto;
+  display: flexbox;
+  justify-content: center;
+  margin-top: 66px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: white;
+  border-radius: 16px;
+  padding-top: 85px;
+
+}
+
+ul {
+  list-style-type: none;
+}
+
+.img-michael{
+  padding: 28px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}

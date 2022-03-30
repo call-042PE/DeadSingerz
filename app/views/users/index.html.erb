@@ -1,4 +1,12 @@
-<h1>Dashboard</h1>
+<h2>Dashboard</h2>
 
-<%= @user.first_name %>
-<%= @user.email %>
+<%= @user.first_name.capitalize %>
+<%= @user.last_name.capitalize %>
+
+<h2>Bookings</h2>
+
+<h2>Waiting Bookings</h2>
+
+<% @bookings.each do |booking|%>
+<p> <%= booking.singer.name %></p>
+<% end %>
