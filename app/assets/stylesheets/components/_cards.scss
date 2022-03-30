@@ -2,30 +2,30 @@
   width: 1100px;
   margin: 0 auto;
   margin-top: 30px;
-
 }
 
 .row {
 
-  width: 800px;
-  background-color: #e4e3e3;
+  width: 1342px;
+  background-color: #fffdfd;
   justify-content: center;
   border-radius: 16px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  margin-left: 250px;
-  margin-top: 20px;
+  // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  margin-left: 40px;
+  margin-top: 50px;
+
 }
 
 .card {
-  width: 800px;
+  width: 1100px;
   height: 400px;
   margin-top: 12px;
-
 }
 
 .img-fluid {
-  height: 400px;
-  width: 300px;
+  height: 410px;
+  width: 500px;
   object-fit: cover;
   object-position: center;
 }
@@ -65,4 +65,12 @@ strong {
 .fa-star-half-stroke::before {
   content: "\f5c0";
   color: #FDCC0D;
+}
+
+.card-title {
+  font-weight: 800;
+}
+
+.card-body {
+  margin-left: 40px;
 }
