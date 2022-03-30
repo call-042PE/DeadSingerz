@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :load_booking, except:[ :index, :new, :create ]
+  before_action :load_booking, except: %i[index new create]
 
   def index
     @bookings = Booking.where(user_id: current_user.id)
@@ -9,10 +9,18 @@ class BookingsController < ApplicationController
   def create
     already_booked = false
     @bookings_booked = Booking.where(date: params[:booking][:date])
-    if !@bookings_booked.empty? # if the array is not empty it means that someone booked some artist on the same day
+    if @bookings_booked.empty?
+      @booking = Booking.new(booking_params)
+      @booking.booked = false
+      if @booking.save
+        redirect_to "/dashboard"
+      else
+        redirect_to "/singers/"
+      end
+    else # if the array is not empty it means that someone booked some artist on the same day
       @bookings_booked.each do |booking|
         @booking = Booking.new(booking_params)
-        already_booked = true if @booking.singer.name == booking.singer.name # we check if the artist of the current booking is the artist the user booked on
+        already_booked = true if @booking.singer.name == booking.singer.name
       end
       unless already_booked
         @booking.booked = false
@@ -21,14 +29,6 @@ class BookingsController < ApplicationController
         else
           redirect_to "/singers/"
         end
-      end
-    else
-      @booking = Booking.new(booking_params)
-      @booking.booked = false
-      if @booking.save
-        redirect_to "/dashboard"
-      else
-        redirect_to "/singers/"
       end
     end
   end
