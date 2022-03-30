@@ -1,21 +1,22 @@
 <div class="my-container">
   <div class="row g-0">
     <div class="col-md-4 card-image">
-    <%= cl_image_tag @singer.photo.key, crop: :fill, class: "img-fluid rounded-start" %>
+      <%= cl_image_tag @singer.photo.key, crop: :fill, class: "img-fluid rounded-start" %>
 
-    </div>
-    <div class="col-md-8">
-
-      <div class="card-body">
-        <h5 class="card-title"><strong><%= @singer.name %></strong></h5>
-        <p class="card-text"><small class="text-muted"><% @singer.birth_year %><%= " " %><i class="fa-solid fa-cross"></i><%= @singer.death_year %></small></p>
-        <p class="card-text"><small class="text-muted"><%= @singer.category.capitalize %></small></p>
-        <p class="card-text"><%= @singer.bio %></p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        <%= link_to "Book now", "#{params[:id]}/bookings/new", class: "btn btn-flat" %>
-        </br>
-        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
       </div>
+        <div class="col-md-8">
+
+          <div class="card-body">
+            <h1 class="card-title"><strong><%= @singer.name %></strong></h1>
+            <p class="card-text"><small class="text-muted"><% @singer.birth_year %><%= " " %><i class="fa-solid fa-cross"></i><%= @singer.death_year %></small></p>
+            <p class="card-text"><small class="text-muted"><%= @singer.category.capitalize %></small></p>
+            <p class="card-text"><%= @singer.bio %></p>
+            <p class="card-text"><small class="text-muted">Last rented 3 hours ago</small></p>
+            <%= link_to "Book now", "#{params[:id]}/bookings/new", class: "btn btn-flat" %>
+            </br>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+          </div>
     </div>
-</div>
+  </div>
+
 </div>
