@@ -3,17 +3,6 @@
 </div>
 
 
-<div class="my-container">
-      <div class="card-body">
-        <h1 class="card-title"><strong><%= @singer.name %></strong></h1>
-        <p class="card-text"><small class="text-muted"><% @singer.birth_year %><%= " " %><i class="fa-solid fa-cross"></i><%= @singer.death_year %></small></p>
-        <p class="card-text"><small class="text-muted"><%= @singer.category.capitalize %></small></p>
-        <p class="card-text"><%= @singer.bio %></p>
-        <p class="card-text"><small class="text-muted">Last rented 3 hours ago</small></p>
-        </br>
-        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-      </div>
-
     <div class="calendar">
       <div class="calendar__opts">
         <select name="calendar__month" id="calendar__month">
@@ -103,21 +92,28 @@
             <p class="card-text"><small class="text-muted"><%= @singer.category.capitalize %></small></p>
             <p class="card-text"><%= @singer.bio %></p>
             <p class="card-text"><small class="text-muted">Last rented 3 hours ago</small></p>
-            <%= link_to "Book now", "#{params[:id]}/bookings/new", class: "btn btn-flat" %>
+          </div>
+    </div>
+
+<div class="my-container">
+      <div class="card-body">
+        <h1 class="card-title"><strong><%= @singer.name %></strong></h1>
+        <p class="card-text"><small class="text-muted"><% @singer.birth_year %><%= " " %><i class="fa-solid fa-cross"></i><%= @singer.death_year %></small></p>
+        <p class="card-text"><small class="text-muted"><%= @singer.category.capitalize %></small></p>
+        <p class="card-text"><%= @singer.bio %></p>
+        <p class="card-text"><small class="text-muted">Last rented 3 hours ago</small></p>
+        <%= link_to "Book now", "#{params[:id]}/bookings/new", class: "btn btn-flat" %>
              <%= simple_form_for [@singer, @rating] do |f| %>
              <%= f.input :rating %>
              <%= f.input :review %>
              <%= f.submit %>
              <% end %>
-            </br>
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-          </div>
+        </div>
           <% @ratingsArray.each do |rating| %>
           <%= rating.rating %>
           <%= rating.review %>
           <% end %>
-</div>
-    </div>
-
+      </div>
 
 </div>
