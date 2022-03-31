@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @singers = Singer.all
   end
 
   def dashboard
