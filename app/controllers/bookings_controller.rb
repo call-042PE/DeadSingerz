@@ -33,6 +33,28 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @singer = Singer.find(params[:singer_id])
+    @booking = Booking.find(params[:id])
+    if current_user.id == @singer.user_id
+      @booking.update(booked: true)
+      if @singer.save
+        redirect_to "/dashboard"
+      end
+    end
+  end
+
+  def destroy
+    @singer = Singer.find(params[:singer_id])
+    @booking = Booking.find(params[:id])
+    if current_user.id == @singer.user_id
+      @booking.delete!
+      if @singer.save!
+        redirect_to "/dashboard"
+      end
+    end
+  end
+
   def show
     @bookings = current_user.bookings
   end
@@ -50,7 +72,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user_id, :singer_id, :date)
+    params.require(:booking).permit(:user_id, :singer_id, :date, :price, :bio, :death_year)
   end
 
   def load_booking

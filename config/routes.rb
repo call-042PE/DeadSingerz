@@ -9,6 +9,6 @@ Rails.application.routes.draw do
 
   resources :singers do
     resources :ratings
-    resources :bookings, only: [ :new, :create ]
+    resources :bookings, only: [ :new, :create, :update, :destroy ]
   end
 end

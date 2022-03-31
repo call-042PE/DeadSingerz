@@ -1,12 +1,47 @@
-<h2>Dashboard</h2>
+<div class="text-center dashboard-container" data-controller="dashboard">
 
-<%= @user.first_name.capitalize %>
-<%= @user.last_name.capitalize %>
+  <div class="my_container">
+    <div class="row">
+      <div>
+        <ul class="option-navbar">
+          <li class="nav-item active">
+            <%= link_to "Dashboard", "#dashboard", class: "nav-link link_active", data: {action: "click->dashboard#dashboard", target: "dashboard.dashboardLink"} %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Singers", "#singers", class: "nav-link", data: {action: "click->dashboard#singers", target: "dashboard.singerLink"} %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Booking", "#bookings", class: "nav-link", data: {action: "click->dashboard#bookings", target: "dashboard.bookingLink"} %>
+          </li>
+        </ul>
+      </div>
+      <div class="separator"></div>
+      <div style="min-height: 22em;">
+        <div data-dashboard-target="dashboard" class="dashboard active">
+          <%= render 'shared/dashboard' %>
+        </div>
 
-<h2>Bookings</h2>
+        <div data-dashboard-target="singer" class="singer not-active">
+          <%= render 'shared/singer' %>
+        </div>
 
-<h2>Waiting Bookings</h2>
+        <div data-dashboard-target="booking" class="booking not-active">
+          <%= render 'shared/booking' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<% @bookings.each do |booking|%>
-<p> <%= booking.singer.name %></p>
-<% end %>
+
+<div class="notification-container">
+  <div
+  data-controller="notification"
+  data-notification-delay-value="3000"
+  class="good done">
+
+    <p>💀 Successfully accepted booking!</p>
+
+    <!-- <button data-action="notification#hide">Close</button> !-->
+  </div>
+</div>
