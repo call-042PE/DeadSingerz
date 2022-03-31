@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_29_123005) do
+ActiveRecord::Schema.define(version: 2022_03_31_122723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,15 @@ ActiveRecord::Schema.define(version: 2022_03_29_123005) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer "rating"
+    t.text "review"
+    t.bigint "singer_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["singer_id"], name: "index_ratings_on_singer_id"
+  end
+
   create_table "singers", force: :cascade do |t|
     t.string "name"
     t.string "category"
@@ -77,13 +86,12 @@ ActiveRecord::Schema.define(version: 2022_03_29_123005) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "first_name"
     t.string "last_name"
-    t.bigint "rating_id"
     t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["rating_id"], name: "index_users_on_rating_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "ratings", "singers"
   add_foreign_key "singers", "users"
 end

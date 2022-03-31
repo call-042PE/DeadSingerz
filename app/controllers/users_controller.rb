@@ -9,6 +9,7 @@ before_action :set_user, only: [:show, :edit, :update]
 
   def show
     @user = User.find(params[:id])
+    raise
   end
 
   def new
@@ -31,7 +32,7 @@ before_action :set_user, only: [:show, :edit, :update]
 
   private
 
-  def set_uset
+  def set_user
     @user = User.find(params[:id])
   end
 

@@ -20,6 +20,13 @@ class SingersController < ApplicationController
 
   def show
     @singer = Singer.find(params[:id])
+    @rating = Rating.new
+    @ratings = @singer.rating_ids
+    @ratingsArray = []
+    @ratings.each do |rating|
+      @ratingsArray << Rating.find_by(id: rating)
+    end
+    return @ratingsArray
   end
 
   def new
