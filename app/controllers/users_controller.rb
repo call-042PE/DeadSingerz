@@ -4,6 +4,7 @@ before_action :set_user, only: [:show, :edit, :update]
   def index
     @user = current_user
     @bookings = Booking.where(user_id: @user.id)
+    @singers = Singer.where(user_id: @user.id)
   end
 
   def show
