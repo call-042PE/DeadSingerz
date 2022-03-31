@@ -3,12 +3,13 @@ class SingersController < ApplicationController
   before_action :set_singer, only: [:show, :edit, :destroy]
   def index
     @singers = Singer.all
+    @bookings = Booking.all
   end
 
   def create
     @singer = Singer.new(singer_params)
     @user = current_user
-    @singer.user = @singer
+    @singer.user = @user
 
     if @singer.save
       redirect_to dashboard_path(@user)
@@ -43,7 +44,7 @@ class SingersController < ApplicationController
   private
 
   def singer_params
-    params.require(:singer).permit(:name, :image_url, :photo)
+    params.require(:singer).permit(:name, :image_url, :photo, :price, :bio, :date, :death_year)
   end
 
   def set_singer
