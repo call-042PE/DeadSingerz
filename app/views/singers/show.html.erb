@@ -1,21 +1,101 @@
-<div class="my-container">
-  <div class="row g-0">
-    <div class="col-md-4 card-image">
-    <%= cl_image_tag @singer.photo.key, crop: :fill,height: 200, width: 300, class: "img-fluid rounded-start" %>
-      </div>
-        <div class="col-md-8">
+<div class="card-image">
+  <%= cl_image_tag @singer.photo.key, crop: :fill, class: "img-fluid rounded-start" %>
+</div>
 
-          <div class="card-body">
-            <h1 class="card-title"><strong><%= @singer.name %></strong></h1>
-            <p class="card-text"><small class="text-muted"><% @singer.birth_year %><%= " " %><i class="fa-solid fa-cross"></i><%= @singer.death_year %></small></p>
-            <p class="card-text"><small class="text-muted"><%= @singer.category.capitalize %></small></p>
-            <p class="card-text"><%= @singer.bio %></p>
-            <p class="card-text"><small class="text-muted">Last rented 3 hours ago</small></p>
-            <%= link_to "Book now", "#{params[:id]}/bookings/new", class: "btn btn-flat" %>
-            </br>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-          </div>
+
+<div class="my-container">
+      <div class="card-body">
+        <h1 class="card-title"><strong><%= @singer.name %></strong></h1>
+        <p class="card-text"><small class="text-muted"><% @singer.birth_year %><%= " " %><i class="fa-solid fa-cross"></i><%= @singer.death_year %></small></p>
+        <p class="card-text"><small class="text-muted"><%= @singer.category.capitalize %></small></p>
+        <p class="card-text"><%= @singer.bio %></p>
+        <p class="card-text"><small class="text-muted">Last rented 3 hours ago</small></p>
+        </br>
+        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+      </div>
+
+    <div class="calendar">
+      <div class="calendar__opts">
+        <select name="calendar__month" id="calendar__month">
+          <option>Jan</option>
+          <option>Feb</option>
+          <option>Mar</option>
+          <option selected>Apr</option>
+          <option >May</option>
+          <option>Jun</option>
+          <option>Jul</option>
+          <option>Aug</option>
+          <option>Sep</option>
+          <option>Oct</option>
+          <option>Nov</option>
+          <option>Dec</option>
+        </select>
+
+        <select name="calendar__year" id="calendar__year">
+          <option selected>2022</option>
+          <option>2023</option>
+          <option>2024</option>
+          <option>2025</option>
+
+        </select>
+      </div>
+
+      <div class="calendar__body">
+        <div class="calendar__days">
+          <div>M</div>
+          <div>T</div>
+          <div>W</div>
+          <div>T</div>
+          <div>F</div>
+          <div>S</div>
+          <div>S</div>
+        </div>
+
+        <div class="calendar__dates">
+          <div class="calendar__date calendar__date--grey"><span>27</span></div>
+          <div class="calendar__date calendar__date--grey"><span>28</span></div>
+          <div class="calendar__date calendar__date--grey"><span>29</span></div>
+          <div class="calendar__date calendar__date--grey"><span>30</span></div>
+          <div class="calendar__date calendar__date--selected calendar__date--first-date calendar__date--range-start"><span>1</span></div>
+          <div class="calendar__date calendar__date--selected calendar__date--last-date"><span>2</span></div>
+          <div class="calendar__date calendar__date--selected calendar__date--first-date"><span>3</span></div>
+          <div class="calendar__date calendar__date--selected"><span>4</span></div>
+          <div class="calendar__date calendar__date--selected"><span>5</span></div>
+          <div class="calendar__date calendar__date--selected calendar__date--last-date calendar__date--range-end"><span>6</span></div>
+          <div class="calendar__date"><span>7</span></div>
+          <div class="calendar__date"><span>8</span></div>
+          <div class="calendar__date"><span>9</span></div>
+          <div class="calendar__date"><span>10</span></div>
+          <div class="calendar__date"><span>11</span></div>
+          <div class="calendar__date"><span>12</span></div>
+          <div class="calendar__date"><span>13</span></div>
+          <div class="calendar__date"><span>14</span></div>
+          <div class="calendar__date"><span>15</span></div>
+          <div class="calendar__date"><span>16</span></div>
+          <div class="calendar__date"><span>17</span></div>
+          <div class="calendar__date"><span>18</span></div>
+          <div class="calendar__date"><span>19</span></div>
+          <div class="calendar__date"><span>20</span></div>
+          <div class="calendar__date "><span>21</span></div>
+          <div class="calendar__date"><span>22</span></div>
+          <div class="calendar__date"><span>23</span></div>
+          <div class="calendar__date"><span>24</span></div>
+          <div class="calendar__date"><span>25</span></div>
+          <div class="calendar__date"><span>26</span></div>
+          <div class="calendar__date"><span>27</span></div>
+          <div class="calendar__date"><span>28</span></div>
+          <div class="calendar__date"><span>29</span></div>
+          <div class="calendar__date"><span>30</span></div>
+          <div class="calendar__date"><span>31</span></div>
+        </div>
+      </div>
+
+      <div class="calendar__buttons">
+      <%= link_to "Back", "/singers", class: "btn btn-flat" %>
+      <%= link_to "Book now", "#{params[:id]}/bookings/new", class: "btn btn-flat" %>
+
+      </div>
     </div>
-  </div>
+
 
 </div>
