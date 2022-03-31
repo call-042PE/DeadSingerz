@@ -59,7 +59,9 @@
 }
 
 .singers-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 25%);
+  grid-gap: 12px;
   justify-content: space-around;
 }
 

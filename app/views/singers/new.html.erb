@@ -2,9 +2,10 @@
   <p><%= simple_form_for(@singer) do |f| %>
     <%= f.input :name %>
     <%= f.input :price %>
+    <%= f.input :category %>
     <%= f.input :bio %>
     <%= f.input :death_year %>
-    <%= f.input :photo, as: :file, input_html: { multiple: true} %>
+    <%= f.file_field :photo%>
     <%= f.submit "create your offer", class: "btn btn-primary"%>
   <% end %></p>
 </div>
