@@ -1,7 +1,11 @@
 
 <div class="container">
     <% @singers.each do |singer| %>
-        <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<%= cl_image_path singer.photo.key%>')">
+        <% if singer.photo.attached? %>
+          <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<%= cl_image_path(singer.photo.key) %>')">
+        <% else  %>
+          <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://genesisblockhk.com/wp-content/uploads/2021/12/15-dec-2021-04-2048x1152.jpg)">
+        <% end %>
           <div class="column">
               <%# <img class="card-img-top" src="https://yard.media/wp-content/uploads/2021/01/2pac-chi-modu-interview.jpg" alt="2pac"> %>
               <div class="card-body">
@@ -11,7 +15,7 @@
                     <%= link_to "Book me!", "/singers/#{singer.id}", class: "btn btn-primary align-text-bottom" %>
                   </div>
               </div>
-              </div>
+            </div>
         </div>
     <% end  %>
 </div>

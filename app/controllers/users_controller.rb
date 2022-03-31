@@ -35,6 +35,6 @@ before_action :set_user, only: [:show, :edit, :update]
   end
 
   def user_params
-    params.require(:user).permit(:name, :image_url, :photo)
+    params.require(:user).permit(:name, :image_url, :photo, :price, :bio, :death_year)
   end
 end

@@ -1,7 +1,11 @@
 <div class="container booking-new">
 <h2 class="singer-name-booking">Booking <%= @singer.name %></h2>
   <div class="booking-singer-image">
-    <%= cl_image_tag @singer.photo.key,:class => "booking-img-singer", height: 200, width: 300, crop: :fill %>
+    <% if @singer.photo.attached? %>
+      <%= cl_image_tag @singer.photo.key, class: "booking-img-singer", height: 200, width: 300, crop: :fill %>
+      <% else %>
+       <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://genesisblockhk.com/wp-content/uploads/2021/12/15-dec-2021-04-2048x1152.jpg)">
+    <% end %>
   </div>
   <div class="singer-details">
     <h3><%= @singer.name %>'s Owner: <%= @singer.user.first_name %> <%= @singer.user.last_name %></h3>
