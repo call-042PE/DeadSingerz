@@ -33,6 +33,28 @@ class BookingsController < ApplicationController
     end
   end
 
+  def update
+    @singer = Singer.find(params[:singer_id])
+    @booking = Booking.find(params[:id])
+    if current_user.id == @singer.user_id
+      @booking.update(booked: true)
+      if @singer.save
+        redirect_to "/dashboard"
+      end
+    end
+  end
+
+  def destroy
+    @singer = Singer.find(params[:singer_id])
+    @booking = Booking.find(params[:id])
+    if current_user.id == @singer.user_id
+      @booking.delete!
+      if @singer.save!
+        redirect_to "/dashboard"
+      end
+    end
+  end
+
   def show
     @bookings = current_user.bookings
   end
