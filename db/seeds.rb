@@ -8,6 +8,7 @@
 require "open-uri"
 Singer.destroy_all
 User.destroy_all
+Rating.destroy_all
 
 user_1 = User.create!(first_name: "clement", last_name: "guidet", email: "c.guidet@lesang.com", password: "123456", password_confirmation: "123456")
 user_2 = User.create!(first_name: "eric", last_name: "zarazir", email: "e.zarazir@lesang.com", password: "123456", password_confirmation: "123456")
@@ -62,3 +63,12 @@ category_11.photo.attach(io: img_category_11, filename: 'Elvis_Presley.png', con
 
 category_12 = Singer.create!(name: "Henri Salvador", category: "pop", price: 500, bio: "French Caribbean comedian, singer and cabaret artist.", death_year: 2008, birth_year: 1917, user: user_4)
 category_12.photo.attach(io: img_category_12, filename: 'Henri_Salvador.png', content_type: 'img/png')
+
+
+# seed rating
+
+category_1.ratings << Rating.create(rating: 3, review: "plus de la balle que celles qu il a recu.")
+category_4.ratings << Rating.create(rating: 4, review: "son live m'a fumé.")
+category_9.ratings << Rating.create(rating: 1, review: "j'aime pas sa gueule.")
+category_11.ratings << Rating.create(rating: 5, review: "le king porte bien son nom.")
+category_8.ratings << Rating.create(rating: 1, review: "cette femme ne chante pas, elle gueule.")
