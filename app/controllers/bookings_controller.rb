@@ -38,9 +38,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     if current_user.id == @singer.user_id
       @booking.update(booked: true)
-      if @singer.save
-        redirect_to "/dashboard"
-      end
+      @singer.save
     end
   end
 
@@ -48,10 +46,8 @@ class BookingsController < ApplicationController
     @singer = Singer.find(params[:singer_id])
     @booking = Booking.find(params[:id])
     if current_user.id == @singer.user_id
-      @booking.delete!
-      if @singer.save!
-        redirect_to "/dashboard"
-      end
+      @booking.delete
+      @singer.save
     end
   end
 

@@ -7,7 +7,7 @@ application.register("notification", Notification)
 
 export default class extends Controller {
 
-  static targets = ["dashboard", "singer", "booking", "dashboardLink", "singerLink", "bookingLink"];
+  static targets = ["dashboard", "singer", "booking", "dashboardLink", "singerLink", "bookingLink", "accept", "decline"];
 
   dashboard(e) {
     e.preventDefault();
@@ -55,6 +55,21 @@ export default class extends Controller {
 
     this.dashboardTarget.classList.remove("active");
     this.dashboardTarget.classList.add("not-active");
+  }
+
+  decline(e) {
+    e.preventDefault();
+    console.log(e);
+    fetch(e.target.href, {
+      method: "DELETE",
+      headers: {"Content-Type": "application/json"}
+    });
+    e.path[3].remove();
+  }
+
+  accept(e) {
+    e.preventDefault();
+    console.log(e);
   }
 
 }
