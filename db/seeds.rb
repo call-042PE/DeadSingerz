@@ -15,7 +15,6 @@ user_2 = User.create!(first_name: "eric", last_name: "zarazir", email: "e.zarazi
 user_3 = User.create!(first_name: "leandro", last_name: "barbosa", email: "l.barbosa@lesang.com", password: "123456", password_confirmation: "123456")
 user_4 = User.create!(first_name: "thibault", last_name: "brianceau", email: "t.brianceau@lesang.com", password: "123456", password_confirmation: "123456")
 
-
 img_category_1 = URI.open("https://res.cloudinary.com/ddkm6bg5l/image/upload/v1648550694/DeadSingerz/TupacShakur_dana-lixenberg_uhyuxo.jpg")
 img_category_2 = URI.open("https://res.cloudinary.com/ddkm6bg5l/image/upload/v1648550735/DeadSingerz/jim-morrison-du-groupe-de-rock-the-doors_ag1uaa.jpg")
 img_category_3 = URI.open("https://res.cloudinary.com/ddkm6bg5l/image/upload/v1648550807/DeadSingerz/jimmy_Hendrix_j2iolp.jpg")

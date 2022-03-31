@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users
 
   resources :singers do
+    resources :ratings
     resources :bookings, only: [ :new, :create ]
   end
 end

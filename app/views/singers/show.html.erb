@@ -12,9 +12,18 @@
             <p class="card-text"><%= @singer.bio %></p>
             <p class="card-text"><small class="text-muted">Last rented 3 hours ago</small></p>
             <%= link_to "Book now", "#{params[:id]}/bookings/new", class: "btn btn-flat" %>
+             <%= simple_form_for [@singer, @rating] do |f| %>
+             <%= f.input :rating %>
+             <%= f.input :review %>
+             <%= f.submit %>
+             <% end %>
             </br>
             <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
           </div>
+          <% @ratingsArray.each do |rating| %>
+          <%= rating.rating %>
+          <%= rating.review %>
+          <% end %>
     </div>
   </div>
 
