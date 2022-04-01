@@ -1,5 +1,5 @@
 <h1>My Booking</h2>
-<div class="singers-container container" style="padding-bottom: 20px">
+<div class="singers-container container" style="padding-bottom: 20px" data-dashboard-target="userbooking">
   <% if @bookings.empty? %>
     <h3>No singer booked for now.<h3>
   <% else %>
@@ -20,7 +20,7 @@
 <div class="separator"></div>
 
 <h2>Waiting bookings</h2>
-<div class="singers-container container" style="padding-bottom: 20px">
+<div class="singers-container container" style="padding-bottom: 20px" data-dashboard-target="waitingbooking">
   <% if @bookings.empty? %>
     <h3>No waiting singer for now.<h3>
   <% else %>
@@ -41,7 +41,7 @@
 <div class="separator"></div>
 
 <h2>Accept bookings</h2>
-<div class="singers-container container" style="padding-bottom: 20px">
+<div class="singers-container container" style="padding-bottom: 20px" data-dashboard-target="acceptbooking">
   <% if @bookings.empty? %>
     <h3>No waiting singer for now.<h3>
   <% else %>
@@ -51,7 +51,7 @@
           <div class="column">
             <div class="card-body">
               <h5 class="card-title"><%= booking.singer.name %></h5>
-              <%= link_to "Accept", "/singers/#{booking.singer.id}/bookings/#{booking.id}", :method => :put, class: "btn btn-primary" %>
+              <%= link_to "Accept", "/singers/#{booking.singer.id}/bookings/#{booking.id}", :method => :put, data: {action: "click->dashboard#accept", target: "dashboard.accept"},class: "btn btn-success" %>
               <%= link_to "Decline", "/singers/#{booking.singer.id}/bookings/#{booking.id}",:method => :delete, data: {action: "click->dashboard#decline", target: "dashboard.decline"}, class: "btn btn-danger" %>
             </div>
           </div>
