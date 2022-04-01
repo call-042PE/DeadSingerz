@@ -6352,13 +6352,6 @@
   "resolved" "https://registry.npmjs.org/stimulus-animated-number/-/stimulus-animated-number-4.0.0.tgz"
   "version" "4.0.0"
 
-"stimulus-carousel@^4.0.0":
-  "integrity" "sha512-AW0jC5xJ6IJ6HWo9dxVLmv02xvaYvLR5TAM8EKtH0lrqDqarzlOEVgnBefKsIqP1KMuIv74TtWKwwaY7ikfweQ=="
-  "resolved" "https://registry.npmjs.org/stimulus-carousel/-/stimulus-carousel-4.0.0.tgz"
-  "version" "4.0.0"
-  dependencies:
-    "swiper" "^7.4.1"
-
 "stimulus-notification@^2.0.0":
   "integrity" "sha512-L8vLaLjcK5JURAwvEhUYgQr5GqOXbdFQaopooYXqp87UwmZC+mCXmIm4PD8KNOYw+3xEjgcXvyAXoWXGgYrlHg=="
   "resolved" "https://registry.npmjs.org/stimulus-notification/-/stimulus-notification-2.0.0.tgz"
@@ -6537,22 +6530,6 @@
     "stable" "^0.1.8"
     "unquote" "~1.1.1"
     "util.promisify" "~1.0.0"
-
-"swiper@^7.4.1":
-  "integrity" "sha512-dhbL4tpYFvHug1J7GnKElfTi6EYhlZy/vNZRhHkWFyUsWZ1Vovipxj3la5gqllMogygXJMe3zvVv+f6eppvWiA=="
-  "resolved" "https://registry.npmjs.org/swiper/-/swiper-7.4.1.tgz"
-  "version" "7.4.1"
-  dependencies:
-    "dom7" "^4.0.2"
-    "ssr-window" "^4.0.2"
-
-"swiper@^8.0.7":
-  "integrity" "sha512-GHjDfxSZdupfU7LrSVOpaNaT7R1D2zxopPGBFz1UOXOtsYvVJLg0k6NvkTAD7qn0ASl5pTti82qoYwvYvIkg4g=="
-  "resolved" "https://registry.npmjs.org/swiper/-/swiper-8.0.7.tgz"
-  "version" "8.0.7"
-  dependencies:
-    "dom7" "^4.0.4"
-    "ssr-window" "^4.0.2"
 
 "tapable@^1.0.0", "tapable@^1.1.3":
   "integrity" "sha512-4WK/bYZmj8xLr+HUCODHGF1ZFzsYffasLUgEiMBY4fgtltdO6B4WJtlSbPaDTLpYTcGVwM2qLnFTICEcNxs3kA=="
