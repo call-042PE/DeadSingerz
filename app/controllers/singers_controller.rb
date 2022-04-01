@@ -19,6 +19,7 @@ class SingersController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @singer = Singer.find(params[:id])
     @rating = Rating.new
     @ratings = @singer.rating_ids
@@ -46,6 +47,20 @@ class SingersController < ApplicationController
     @singer = Singer.find(params[:id])
     @singer.destroy
     redirect_to dashboard_path(@user)
+  end
+
+  def getsinger
+    singer = Singer.find(params[:id])
+    render json: {
+      id: singer.id,
+      name: singer.name,
+      category: singer.category,
+      price: singer.price,
+      user_id: singer.user_id,
+      death_year: singer.death_year,
+      bio: singer.bio,
+      key: singer.photo.key
+    }
   end
 
   private

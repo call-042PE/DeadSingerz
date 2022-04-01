@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
-  before_action :load_booking, except: %i[index new create]
+  before_action :load_booking, except: %i[index new create userbookings waitingbookings]
 
   def index
     @bookings = Booking.where(user_id: current_user.id)
@@ -63,6 +63,18 @@ class BookingsController < ApplicationController
   def edit
     @booking.destroy
     redirect_to(bookings_path)
+  end
+
+  # custom api method routes
+
+  def userbookings
+    @bookings = Booking.where(user_id: current_user.id, booked: true)
+    render json: @bookings
+  end
+
+  def waitingbookings
+    @bookings = Booking.where(user_id: current_user.id, booked: false)
+    render json: @bookings
   end
 
   private
