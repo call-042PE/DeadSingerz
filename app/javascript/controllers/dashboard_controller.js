@@ -64,13 +64,15 @@ export default class extends Controller {
               bErased = true;
             }
             this.waitingbookingTarget.insertAdjacentHTML("beforeend", `
-            <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('http://res.cloudinary.com/ddkm6bg5l/image/upload/v1/development/${singer.key}')">
-              <div class="column">
-                <div class="card-body">
-                  <h5 class="card-title">${singer.name}</h5>
+
+              <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('http://res.cloudinary.com/ddkm6bg5l/image/upload/v1/production/${singer.key}')">
+                <div class="column">
+                  <div class="card-body">
+                    <h5 class="card-title">${singer.name}</h5>
+                  </div>
+
                 </div>
               </div>
-            </div>
             `);
           })
         })

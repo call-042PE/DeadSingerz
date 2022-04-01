@@ -1,62 +1,65 @@
-<h1>My Booking</h2>
-<div class="singers-container container" style="padding-bottom: 20px" data-dashboard-target="userbooking">
-  <% if @bookings.empty? %>
-    <h3>No singer booked for now.<h3>
-  <% else %>
-    <% @bookings.each do |booking| %>
-      <% if booking.booked == true %>
-        <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<%= cl_image_path booking.singer.photo.key %>')">
-          <div class="column">
-            <div class="card-body">
-              <h5 class="card-title"><%= booking.singer.name %></h5>
+
+<div class="min-height-container">
+    <h1>My Booking</h2>
+    <div class="singers-container container" style="padding-bottom: 20px" data-dashboard-target="userbooking">
+      <% if @bookings.empty? %>
+        <h3>No singer booked for now.<h3>
+      <% else %>
+        <% @bookings.each do |booking| %>
+          <% if booking.booked == true %>
+            <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<%= cl_image_path booking.singer.photo.key %>')">
+              <div class="column">
+                <div class="card-body">
+                  <h5 class="card-title"><%= booking.singer.name %></h5>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
-  <% end %>
-</div>
+    </div>
 
-<div class="separator"></div>
+    <div class="separator"></div>
 
-<h2>Waiting bookings</h2>
-<div class="singers-container container" style="padding-bottom: 20px" data-dashboard-target="waitingbooking">
-  <% if @bookings.empty? %>
-    <h3>No waiting singer for now.<h3>
-  <% else %>
-    <% @bookings.each do |booking| %>
-      <% if booking.booked == false%>
-        <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<%= cl_image_path booking.singer.photo.key %>')">
-          <div class="column">
-            <div class="card-body">
-              <h5 class="card-title"><%= booking.singer.name %></h5>
+    <h2>Waiting bookings</h2>
+    <div class="singers-container container" style="padding-bottom: 20px" data-dashboard-target="waitingbooking">
+      <% if @bookings.empty? %>
+        <h3>No waiting singer for now.<h3>
+      <% else %>
+        <% @bookings.each do |booking| %>
+          <% if booking.booked == false%>
+            <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<%= cl_image_path booking.singer.photo.key %>')">
+              <div class="column">
+                <div class="card-body">
+                  <h5 class="card-title"><%= booking.singer.name %></h5>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
-  <% end %>
-</div>
+    </div>
 
-<div class="separator"></div>
+    <div class="separator"></div>
 
-<h2>Accept bookings</h2>
-<div class="singers-container container" style="padding-bottom: 20px" data-dashboard-target="acceptbooking">
-  <% if @bookings.empty? %>
-    <h3>No waiting singer for now.<h3>
-  <% else %>
-    <% @bookings.each do |booking| %>
-      <% if booking.booked == false && booking.singer.user_id == current_user.id%>
-        <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<%= cl_image_path booking.singer.photo.key %>')">
-          <div class="column">
-            <div class="card-body">
-              <h5 class="card-title"><%= booking.singer.name %></h5>
-              <%= link_to "Accept", "/singers/#{booking.singer.id}/bookings/#{booking.id}", :method => :put, data: {action: "click->dashboard#accept", target: "dashboard.accept"},class: "btn btn-success" %>
-              <%= link_to "Decline", "/singers/#{booking.singer.id}/bookings/#{booking.id}",:method => :delete, data: {action: "click->dashboard#decline", target: "dashboard.decline"}, class: "btn btn-danger" %>
+    <h2>Accept bookings</h2>
+    <div class="singers-container container" style="padding-bottom: 20px" data-dashboard-target="acceptbooking">
+      <% if @bookings.empty? %>
+        <h3>No waiting singer for now.<h3>
+      <% else %>
+        <% @bookings.each do |booking| %>
+          <% if booking.booked == false && booking.singer.user_id == current_user.id%>
+            <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<%= cl_image_path booking.singer.photo.key %>')">
+              <div class="column">
+                <div class="card-body">
+                  <h5 class="card-title"><%= booking.singer.name %></h5>
+                  <%= link_to "Accept", "/singers/#{booking.singer.id}/bookings/#{booking.id}", :method => :put, data: {action: "click->dashboard#accept", target: "dashboard.accept"},class: "btn btn-success" %>
+                  <%= link_to "Decline", "/singers/#{booking.singer.id}/bookings/#{booking.id}",:method => :delete, data: {action: "click->dashboard#decline", target: "dashboard.decline"}, class: "btn btn-danger" %>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
-  <% end %>
+    </div>
 </div>
