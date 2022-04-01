@@ -1,3 +1,4 @@
+
 // Import page-specific CSS files here.
 .container{
   display: flex;
@@ -37,6 +38,15 @@
 
 .btn{
   border-radius: 8px;
-  opacity: 0.88;
+  opacity: 0.8;
+  background-color: #3e37b8 !important;
+  border-color: #3e37b8 !important;
   filter: alpha(opacity=90);
+}
+
+
+.btn:hover {
+  background-color: white !important;
+  color: #3e37b8 !important;
+  opacity: 1;
 }
