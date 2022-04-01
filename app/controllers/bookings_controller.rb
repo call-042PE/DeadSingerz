@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
   before_action :load_booking, except: %i[index new create userbookings waitingbookings]
 
   def index
-    @bookings = Booking.where(user_id: current_user.id)
+    @bookings = Booking.where(booked: false)
   end
 
   def create
