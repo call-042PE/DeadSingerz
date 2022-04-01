@@ -9,12 +9,6 @@
         <p class="card-text"><small class="text-muted"><%= @singer.category.capitalize %></small></p>
         <p class="card-text"><%= @singer.bio %></p>
         <p class="card-text"><small class="text-muted">Last rented 3 hours ago</small></p>
-        <% @ratingsArray.each do |rating| %>
-          <p><%= rating.rating %>
-          <%= rating.review %>
-          </p>
-          <% end %>
-         <%# <%= link_to "Book now", "#{params[:id]}/bookings/new", class: "btn btn-flat" %>
 
              <div class="form-booking">
          <%= simple_form_for [@singer, @booking] do |b| %>
@@ -27,22 +21,43 @@
 
          <%end%>
         </div>
+        <br>
+        <br>
+        <p><%= @singer.name %>'s ratings: </p>
+        <% @ratingsArray.each do |rating| %>
+                <% case rating.rating %>
+                  <% when 1 %>
+                  <i class="fa-solid fa-star"></i>
+                  <% when 2 %>
+                   <i class="fa-solid fa-star"></i> <i class="fa-solid fa-star"></i>
+                  <% when 3 %>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <% when 4 %>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                  <% when 5 %>
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <% end %>
+
+          <p>"<%= "#{rating.review}" %>"</p>
+          </p>
+          <% end %>
+
+        <div class="my-container container-review">
+      <div class=" adding-review">
+      <h2>Add a Review to <%= @singer.name %></h2>
+        <%= simple_form_for [@singer, @rating] do |f| %>
+         <%= f.input :rating %>
+         <%= f.input :review %>
+         <%= f.submit class: "btn btn-primary align-text-bottom" %>
+         <% end %>
+      </div>
+  </div>
+
+
+
+
 
       </div>
     </div>
 
 </div>
-
-</div>
-
-<%= simple_form_for [@singer, @rating] do |f| %>
-             <%= f.input :rating %>
-             <%= f.input :review %>
-             <%= f.submit %>
-             <% end %>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-        </div>
-          <% @ratingsArray.each do |rating| %>
-          <%= rating.rating %>
-          <%= rating.review %>
-          <% end %>

@@ -9,7 +9,6 @@ class RatingsController < ApplicationController
     @rating.singer = @singer
     @rating.save
     redirect_to singer_path(@singer)
-    raise
   end
 
   def new
