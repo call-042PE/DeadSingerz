@@ -19,6 +19,7 @@ class SingersController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @singer = Singer.find(params[:id])
     @rating = Rating.new
     @ratings = @singer.rating_ids
