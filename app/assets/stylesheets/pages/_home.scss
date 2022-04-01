@@ -4,13 +4,13 @@ body {
   color: #ffffff;
   // background-color: rgb(242, 242, 242);
   font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  background: rgb(255,240,247);
-background: radial-gradient(circle, rgba(255,240,247,1) 0%, rgba(236,245,255,1) 100%);
+  background: rgb(41,27,75);
+background: linear-gradient(90deg, rgba(41,27,75,1) 0%, rgba(0,0,0,1) 47%, rgba(47,38,83,1) 100%);
 }
 
 .background-home {
   background: linear-gradient(#2b2b2b, #000000);
-
+}
   video {
     position: absolute;
     top: 0;
@@ -22,7 +22,7 @@ background: radial-gradient(circle, rgba(255,240,247,1) 0%, rgba(236,245,255,1) 
     -o-object-position: center;
        object-position: center;
   }
-}
+
 
 
   .banner {
