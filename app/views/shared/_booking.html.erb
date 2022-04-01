@@ -48,7 +48,7 @@
         <h3>No waiting singer for now.<h3>
       <% else %>
         <% @bookings.each do |booking| %>
-          <% if booking.booked == false && booking.singer.user_id == current_user.id%>
+          <% if booking.booked == false && booking.singer.user.id == current_user.id%>
             <div class="card card-background text-center" style="width: 22rem; background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('<%= cl_image_path booking.singer.photo.key %>')">
               <div class="column">
                 <div class="card-body">
