@@ -1,13 +1,15 @@
 // Specific CSS for your home-page
 body {
   height: 80vh;
-  color: #2b2b2b;
+  color: #ffffff;
   // background-color: rgb(242, 242, 242);
   font-family: "Varela Round", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   background: rgb(255,240,247);
 background: radial-gradient(circle, rgba(255,240,247,1) 0%, rgba(236,245,255,1) 100%);
+}
 
-  }
+.background-home {
+  background: linear-gradient(#2b2b2b, #000000);
 
   video {
     position: absolute;
@@ -20,6 +22,7 @@ background: radial-gradient(circle, rgba(255,240,247,1) 0%, rgba(236,245,255,1) 
     -o-object-position: center;
        object-position: center;
   }
+
 
   .banner {
     background-size: cover;
@@ -49,7 +52,9 @@ background: radial-gradient(circle, rgba(255,240,247,1) 0%, rgba(236,245,255,1) 
   }
 
   .banner-container{
-    display: block;}
+
+    display: block;
+  }
 
 
 .our-deadsingerz{
@@ -58,15 +63,16 @@ background: radial-gradient(circle, rgba(255,240,247,1) 0%, rgba(236,245,255,1) 
 }
 
 .my-container-home{
-  width: 50%;
-  margin: 0 auto;
-  display: flexbox;
-  justify-content: center;
+  // width: 50%;
+  // margin: 0 auto;
+  // display: flexbox;
+  // justify-content: center;
   margin-top: 66px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  background-color: white;
-  border-radius: 16px;
-  padding-top: 85px;
+  // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  // background-color: white;
+  // border-radius: 16px;
+  // padding-top: 85px;
+  color: aliceblue;
 
 }
 
@@ -76,5 +82,5 @@ ul {
 
 .img-michael{
   padding: 28px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  // box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
